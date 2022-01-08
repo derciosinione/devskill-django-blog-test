@@ -12,7 +12,7 @@ def index(request):
     context = {
         'posts': posts,
     }
-
+    
     return render(request, 'blog.html', context)
 
 

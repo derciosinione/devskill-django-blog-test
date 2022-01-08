@@ -1,1 +1,16 @@
-{% extends "header.html" %}  {# Your code here #}
+{% extends "header.html" %} 
+{% block content %}
+  <a href="/admin">Login</a>
+  <br />
+  <a href="{% url 'blog:add_post' %}">Add new Post</a>
+  <br /><br />
+  
+  {% if posts %} 
+    {% for post in posts %}
+      <h3>{{ post.title }}</h3>
+      <h5>{{ post.date|date:"d-m-Y" }}</h5>
+      <p>{{ post.body }}</p>
+      <p><--- end of blog.post ---></p>
+    {% endfor %} 
+  {% endif %} 
+{% endblock %}

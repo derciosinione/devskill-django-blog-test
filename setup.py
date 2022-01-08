@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 
 requirements = [
     "django==2.2",
+    "django-crispy-forms==1.11.2",
     "pytest<7,>=5",
     "pytest-timeout",
     "pytest-django",

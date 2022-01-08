@@ -1,3 +1,23 @@
 {% extends "header.html" %}
+{% load crispy_forms_tags %}
 
-{# Your code here #}
+{% block content %}
+   <div class="container">
+
+    <a href="/admin">Login</a>
+    <br>
+    <a href="{% url 'blog:index' %}">Home Page</a>
+    <br><br>
+    
+
+    {% if form.errors %}
+        {{form.errors}}
+    {% endif %}
+
+        <form method="POST">
+        {% csrf_token %}
+            {{form|crispy}}
+        <button type="submit" class="btn btn-info">Postar</button>
+    </form>   
+   </div>
+{% endblock %}

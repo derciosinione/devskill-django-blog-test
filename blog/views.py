@@ -7,9 +7,9 @@ from .forms import AddPostForm
 
 
 def index(request):
-    posts = Post.objects
+    posts = Post.objects.all()
     context = {
-        'post': posts,
+        'posts': posts,
     }
 
     return render(request, 'index.html', context)

@@ -1,13 +1,13 @@
 import base64
 import unittest
 
-import blog.views
+import blog1.views
 
 
 class StructureTestSuite(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.MODULE = blog.views
+        cls.MODULE = blog1.views
     
     def test_function_exists_add_post(self):
         functions = _get_function_names(self.MODULE)
